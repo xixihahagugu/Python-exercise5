@@ -1,26 +1,20 @@
-# Exercises Module 5.2
+# Exercises Module 5.1
 
-numbers = []
+import random
 
-while True:
-    user_input = input("Enter a number (or press Enter to quit): ")
+def rolldices():
 
-    # Check if the user wants to quit
-    if user_input == "":
-        break
+    num_dices = int(input("How many dices do you want to run? "))
 
-    else:
-        number = float(user_input)
-        numbers.append(number)
+    total = 0
 
-# Check if there are at least 5 numbers before sorting
-if len(numbers) >= 5:
-    # Sort the numbers in descending order
-    numbers.sort(reverse=True)
+    for dice in range(num_dices):
 
-    # Print the five greatest numbers
-    print("The five greatest numbers are: ")
-    for i in range(5):
-        print(numbers[i])
-else:
-    print("You entered less than five numbers, so there are not enough to find the five greatest numbers.")
+        roll = random.randint(1, 6)
+        total += roll
+
+    # Prints out the sum of the numbers
+    print(f"Total numbers of the dice rolls are {total} ")
+
+
+rolldices()
