@@ -1,19 +1,26 @@
-# Exercises Module 5.3
+# Exercises Module 5.2
 
-num = int(input("Enter a number to check if it is a prime number: "))
+numbers = []
 
-if num > 1:
-    is_prime = True
-    for i in range(2, int(num/2) + 1):
-        if (num % i) == 0:
-            is_prime = False
-            break
+while True:
+    user_input = input("Enter a number (or press Enter to quit): ")
 
-    if is_prime:
-        print(num, "is a prime number")
+    # Check if the user wants to quit
+    if user_input == "":
+        break
 
     else:
-        print(num, "is not a prime number")
+        number = float(user_input)
+        numbers.append(number)
 
+# Check if there are at least 5 numbers before sorting
+if len(numbers) >= 5:
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Print the five greatest numbers
+    print("The five greatest numbers are: ")
+    for i in range(5):
+        print(numbers[i])
 else:
-    print(num, "is not a prime number")
+    print("You entered less than five numbers, so there are not enough to find the five greatest numbers.")
